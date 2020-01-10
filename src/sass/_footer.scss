@@ -1,0 +1,5 @@
+footer {
+    @extend %center;
+    background: map-get($colors, j);
+    height: 360px;
+}

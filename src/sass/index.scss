@@ -1,0 +1,83 @@
+@charset 'utf-8';
+@import 'compass/reset';
+$page_width:1200px;
+$page_container:100%;
+$colors:(a:#abc,b:#affeee,c:#ddffaa,d:#fedfed,e:red,f:blue,g:green,h:orange,i:cyan,j:pink);
+%center {
+    width: $page_width;
+    margin: 0 auto;
+}
+%wrap {
+    width: $page_container;
+}
+
+body {
+    background: #eee;
+}
+#top {
+    @extend %wrap;
+    height: 72px;
+    background: #fff;
+}
+// @import './header';
+header {
+    @extend %center;
+    height: 72px;
+    background:map-get($colors, a);
+    h1 {
+        width: 92px;
+        height: 42px;
+        text-indent: -1000px;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+}
+#banner {
+    @extend %center;
+    background: map-get($colors, b);
+    height: 320px;
+}
+#menu {
+    @extend %center;
+    background: map-get($colors, c);
+    height: 118px;
+}
+#content_wrap {
+    @extend %center;
+    background: map-get($colors, d);
+    height: 1890px;
+}
+.content_concert {
+    @extend %center;
+    background: map-get($colors, e);
+    height: 457px;
+}
+.content_opera {
+    @extend %center;
+    background: map-get($colors, f);
+    height: 457px;
+}
+.content_physical {
+    @extend %center;
+    background: map-get($colors, g);
+    height: 457px;
+}
+.content_campaign {
+    @extend %center;
+    background: map-get($colors, h);
+    height: 457px;
+}
+#bottom {
+    @extend %wrap;
+    background: map-get($colors, i);
+    height: 360px;
+}
+// @import './footer';
+footer {
+    @extend %center;
+    background: map-get($colors, j);
+    height: 360px;
+}
