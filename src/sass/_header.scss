@@ -1,15 +1,279 @@
+@import '_after.scss';
 header {
     @extend %center;
     height: 72px;
-    background:map-get($colors, a);
+    font-size: 14px;
+    font-family: "微软雅黑";
     h1 {
         width: 92px;
         height: 42px;
         text-indent: -1000px;
+        float: left;
+        img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
     }
-    img {
-        width: 100%;
+    .location_header {
+        cursor: pointer;
+        float: left;
+        height: 72px;
+        margin-left: 54px;
+        line-height: 72px;
+        position: relative;
+        white-space: nowrap;
+        &:hover .city_wrap {
+            display: block;
+        }
+        img {
+            display: block;
+            float: left;
+        }
+        .icon_location {
+            width: 12px;
+            height: 14px;
+            margin-top: 29px;
+        }
+        span {
+            font-size: 16px;
+            display: block;
+            float: left;
+            margin: 0 5px;
+        }
+        .arrow_location {
+            width: 9px;
+            height: 6px;
+            margin-top: 33px;
+        }
+        .city_wrap {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        .city_header {
+            width: 626px;
+            z-index: 999;
+            position: relative;
+            left: -115px;
+            top: 0;
+            margin-top: 60px;
+            background: #FFF;
+            border: 1px solid #F4F4F4;
+            box-shadow: 0 2px 8px 0 rgba(0,0,0,.05);
+            border-radius: 2px;
+            padding: 21px;
+            &::after {
+                @include after;
+                left: 140px;
+                margin-left: 0;
+            }
+        }
+        .now_city {
+            line-height: 25px;
+            .select_city {
+                color: #FF1268;
+                background-color: #fff4f8;
+                padding: 0 10px;
+            }
+        }
+        .hot_city {
+            line-height: 25px;
+            margin-top: 40px;
+        }
+        .other_city {
+            line-height: 25px;
+            padding-top: 15px;
+            border-top: 1px solid #EEE;
+            margin-top: 15px;
+        }
+        .title_city {
+            width: 86px;
+            display: inline-block;
+            margin-right: 15px;
+            vertical-align: top;
+            font-size: 16px;
+            color: #111;
+            letter-spacing: .56px;
+            // float: left;
+        }
+        .name_city {
+            display: inline-block;
+            margin-right: 15px;
+            vertical-align: top;
+            font-size: 16px;
+            color: #111;
+            letter-spacing: .56px;
+            &:hover {color: #ff1268;}
+            // float: left;
+        }
+        .list_other {
+            width: 525px;
+            display: inline-block;
+            line-height: 29px;
+            margin-top: -3px;
+        }
+    }
+    .recommend_header {
+        height: 72px;
+        margin: 0 -20px 0 40px;
+        line-height: 72px;
+        max-width: 220px;
+        float: left;
+        overflow: hidden;
+        a {
+            display: inline-block;
+            font-size: 16px;
+            margin-right: 18px;
+            overflow: hidden;
+            &:hover {color: #ff1268;}
+        }
+    } 
+    .right_header {
+        min-width: 55px;
         height: 100%;
-        display: block;
+        position: relative;
+        float: right;
+        line-height: 72px;
+        .box_header {
+            height: 100%;
+            display: inline-block;
+            line-height: 72px;
+            cursor: pointer;
+            position: relative;
+            margin-left: 20px;
+            img {
+                width: 26px;
+                z-index: 20000;
+                display: inline-block;
+                margin-right: 4px;
+                vertical-align: middle;
+            }
+            span {
+                display: inline-block;
+                vertical-align: middle;
+                color: #111;
+                cursor: pointer;
+                font-size: 16px;
+                &:hover {color: #ff1268;}
+            }
+        &:hover .list_wrap{
+            display: block;
+        }
+        &:hover .ewm_download {
+            display: block;
+        }
+    }
+        .login_user {
+            height: 100%;
+            display: inline-block;
+        }
+        .list_wrap {
+            width: 133px;
+            display: none;
+            position: absolute;
+            left: 50%;
+            margin-left: -67px;
+            top: 50px;
+            z-index: 999;
+            .list_login {
+                width: 100%;
+                position: relative;
+                margin-top: 10px;
+                background: #FFF;
+                border: 1px solid #F4F4F4;
+                box-shadow: 0 2px 8px 0 rgba(0,0,0,.05);
+                border-radius: 2px;
+                .li_login {
+                    width: 100%;
+                    height: 50px;
+                    display: block;
+                    line-height: 50px;
+                    font-size: 14px;
+                    color: #111;
+                    letter-spacing: .54px;
+                    text-align: center;
+                    border-bottom: 1px solid #F2F2F2;
+                    &:hover {color: #ff1268;}
+                }
+                .out_login {
+                    display: none;
+                }
+            }
+            .list_login::after {
+                @include after;
+            }
+        }
+        .ewm_download {
+            width: 80px;
+            height: 80px;
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: -12px;
+            z-index: 999;
+            background: #fff;
+            padding: 5px;
+            box-shadow: 1px -1px 1px #ccc;
+            img {
+                width: 100%;
+            }
+        }
+        .ewm_download::after {
+            @include after;
+        }
+    } 
+    .search_header {
+        width: 401px;
+        height: 46px;
+        margin-top: 12px;
+        margin-right: 20px;
+        line-height: 46px;
+        float: right;
+        position: relative;
+        img {
+            width: 17px;
+            position: absolute;
+            left: 22px;
+            top: 15px;
+            z-index: 11;
+        }
+        input {
+            width: 253px;
+            height: 44px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 10;
+            font-size: 16px;
+            outline: 0;
+            -webkit-appearance: none;
+            border: 0;
+            padding: 0 10px 0 54px;
+            border-top-left-radius: 46px;
+            border-bottom-left-radius: 46px;
+            border: 1px solid #f8f8f8;
+            background-color: #f8f8f8;
+            border-right-color: #FF1268;
+            box-sizing: content-box;
+        }
+        .btn_search {
+            width: 82px;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: #FF1268;
+            line-height: 46px;
+            font-size: 16px;
+            text-align: center;
+            color: #FFF;
+            border-radius: 0 27px 27px 0;
+            z-index: 11;
+            letter-spacing: 4px;
+            cursor: pointer;
+        }
     }
 }
