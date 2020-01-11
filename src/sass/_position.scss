@@ -1,0 +1,3 @@
+@mixin position($num) {
+    background-position-y: (-60*$num)+px;
+}

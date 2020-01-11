@@ -24,82 +24,48 @@ a {
 body {
     background: rgb(252,252,252);
 }
-
-#ad_wrap {
-    @extend %wrap;
-    height: 60px;
-}
-.ad {
-    @extend %wrap;
-    height: 100%;
-    text-align: center;
-    min-width: 1200px;
-    overflow: hidden;
-    position: relative;
-    background: rgb(252,252,252);
-    a {
-        @extend %wrap;
-        height: 100%;
-        min-width: 1200px;
-        img {
-            @extend %center;
-            display: block;
-        }
-    }
-}
-.close {
-    width: 23px;
-    height: 23px;
-    background: url('../images/close.png');
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    margin-top: -11.5px;
-    cursor: pointer;
-    background-size: 100%;
-}
+/**********************广告************************************/
+@import './ad';
 #top {
     @extend %wrap;
     height: 72px;
     background: #fff;
 }
+/**********************头部************************************/
 @import './header';
-
-#banner {
-    @extend %center;
-    background: map-get($colors, b);
-    height: 320px;
-}
-#menu {
-    @extend %center;
-    background: map-get($colors, c);
-    height: 118px;
-}
+/**********************轮播图************************************/
+@import './banner';
+/**********************菜单************************************/
+@import './menu';
+/**********************主要内容************************************/
 #content_wrap {
     @extend %center;
-    background: map-get($colors, d);
+    // background: map-get($colors, d);
     height: 1890px;
+    // position: relative;
+    margin-bottom: 30px;
 }
-.content_concert {
-    @extend %center;
-    background: map-get($colors, e);
-    height: 457px;
-}
-.content_opera {
-    @extend %center;
-    background: map-get($colors, f);
-    height: 457px;
-}
-.content_physical {
-    @extend %center;
-    background: map-get($colors, g);
-    height: 457px;
-}
-.content_campaign {
-    @extend %center;
-    background: map-get($colors, h);
-    height: 457px;
-}
+/**********************演唱会************************************/
+@import './dm-content';
+/**********************话剧歌剧************************************/
+// .content_opera {
+//     @extend %center;
+//     background: map-get($colors, f);
+//     height: 457px;
+// }
+/**********************体育比赛************************************/
+// .content_physical {
+//     @extend %center;
+//     background: map-get($colors, g);
+//     height: 457px;
+// }
+/**********************儿童亲子************************************/
+// .content_campaign {
+//     @extend %center;
+//     background: map-get($colors, h);
+//     height: 457px;
+// }
+/**********************尾部************************************/
 #bottom {
     @extend %wrap;
     background: map-get($colors, i);

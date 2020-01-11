@@ -1,0 +1,58 @@
+@import './hover';
+@import './position';
+#menu {
+    @extend %center;
+    height: 118px;
+    margin-top: 15px!important;
+    display: flex;
+    border: 1px solid #EBEBEB;
+    zoom: 1;
+    justify-content: space-evenly;
+    align-items: center;
+    a {
+        width: 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        &:hover p {@include hover_color;}
+        span {
+            width: 48px;
+            height: 48px;
+            background: url('../images/menu.png') no-repeat 0px 0px;
+            background-size: 100% auto;
+        }
+        p {
+            font-size: 16px;
+            color: #111;
+            text-align: center;
+        }
+        &:nth-of-type(2) span {
+            background-position-y: -64px;
+        }
+        &:nth-of-type(3) span {
+            @include position(2);
+        }
+        &:nth-of-type(4) span {
+            @include position(3);
+        }
+        &:nth-of-type(5) span {
+            @include position(4);
+        }
+        &:nth-of-type(6) span {
+            background-position-y: -297px;
+        }
+        &:nth-of-type(7) span {
+            @include position(6);
+        }
+        &:nth-of-type(8) span {
+            @include position(7);
+        }
+        &:nth-of-type(9) span {
+            @include position(8);
+        }
+        &:nth-of-type(10) span {
+            @include position(9);
+        }
+    }
+}
