@@ -1,0 +1,30 @@
+#stairs {
+    background: #fff;
+    border: 1px solid #EBEBEB;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 50px;
+    position: fixed;
+    left: 10px;
+    top: 300px;
+    color: #111;
+    margin-top: -105px;
+    z-index: 9999;
+    .stairs_item {
+        height: 60px;
+        border-bottom: 1px solid #EBEBEB;
+        text-align: center;
+        padding: 5px;
+        font-size: 16px;
+        position: relative;
+        cursor: pointer;
+        box-sizing: content-box;
+        p {
+            margin-top: 10px;
+            line-height: 20px;
+        }
+    }
+}
+.stairs_item:last-of-type {
+    border-bottom: 0;
+}

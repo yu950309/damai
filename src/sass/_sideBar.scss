@@ -1,0 +1,79 @@
+@import './hover';
+@import './after';
+#sideBar {
+    background: #fff;
+    border: 1px solid #EBEBEB;
+    width: 80px;
+    position: fixed;
+    right: 10px;
+    top: 72.5%;
+    margin-top: -105px;
+    z-index: 9999;
+}
+.item {
+    height: 60px;
+    border-bottom: 1px solid #EBEBEB;
+    text-align: center;
+    padding-top: 10px;
+    color: #111;
+    font-size: 12px;
+    position: relative;
+    cursor: pointer;
+    box-sizing: content-box;
+    p {
+        margin-top: 5px;
+    }
+    &:hover p {@include hover_color;}
+    a {
+        display: block;
+        text-decoration: none;
+        color: #111;
+    }
+    .icon {
+        background: url(../images/right.png) no-repeat 3px -30px;
+        margin: 0 auto;
+        width: 32px;
+        height: 29px;
+        background-size: 100%;
+    }
+    .daMai {
+        background-position: 0 4px;
+    }
+    .goTop {
+        background-position: 4px -65px;
+    }
+    .qrCode {
+        background: url(../images/qr-code.jpg) no-repeat center;
+        background-size: 90%;
+        display: none;
+        position: absolute;
+        width: 72px;
+        height: 72px;
+        left: -92px;
+        top: -6px;
+        box-shadow: 2px 2px 4px #ccc;
+        padding: 5px;
+        &::after {
+            position: absolute;
+            display: inline-block;
+            top: 50%;
+            margin-top: -2.5px;
+            right: -5px;
+            width: 0;
+            height: 0;
+            content: '';
+            border-style: solid;
+            border-width: 5px;
+            border-color: #fff #fff transparent transparent;
+            transform: rotate(45deg);
+            box-shadow: 1px -1px 1px #ccc;
+        }
+    }
+}
+.item:nth-of-type(2):hover .qrCode{
+    @include hover_show;
+}
+.go_top {
+    border-bottom-width: 0;
+    display: none;
+}

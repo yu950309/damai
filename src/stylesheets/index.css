@@ -86,11 +86,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 /* line 20, ../sass/index.scss */
+.active {
+  background: #ff1268;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* line 25, ../sass/index.scss */
 a {
   text-decoration: none;
 }
 
-/* line 24, ../sass/index.scss */
+/* line 29, ../sass/index.scss */
 body {
   background: #fcfcfc;
 }
@@ -133,7 +140,7 @@ body {
   background-size: 100%;
 }
 
-/* line 29, ../sass/index.scss */
+/* line 34, ../sass/index.scss */
 #top {
   height: 72px;
   background: #fff;
@@ -506,6 +513,61 @@ header .search_header .btn_search {
   letter-spacing: 4px;
   cursor: pointer;
 }
+/* line 280, ../sass/_header.scss */
+header .search_wrap {
+  width: 402px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+}
+/* line 286, ../sass/_header.scss */
+header .search_wrap .list_search {
+  border: 1px solid #F4F4F4;
+  width: 374px;
+  max-height: 296px;
+  overflow: hidden;
+  position: relative;
+  left: 0;
+  margin-top: 55px;
+  z-index: 999;
+  padding: 0 14px;
+  background: #FFF;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+/* line 299, ../sass/_header.scss */
+header .search_wrap .list_search a {
+  width: 100%;
+  height: 56px;
+  line-height: 56px;
+  display: block;
+  border-bottom: 1px solid #EEE;
+}
+/* line 306, ../sass/_header.scss */
+header .search_wrap .list_search .title_search {
+  max-width: 270px;
+  float: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  color: #111;
+}
+/* line 314, ../sass/_header.scss */
+header .search_wrap .list_search .title_search:hover {
+  color: #ff1268;
+}
+/* line 316, ../sass/_header.scss */
+header .search_wrap .list_search .city_search {
+  max-width: 92px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  float: right;
+  font-size: 14px;
+  color: #666;
+}
 
 /**********************轮播图************************************/
 /* line 1, ../sass/_banner.scss */
@@ -673,9 +735,8 @@ header .search_header .btn_search {
 }
 
 /**********************主要内容************************************/
-/* line 41, ../sass/index.scss */
+/* line 46, ../sass/index.scss */
 #content_wrap {
-  height: 1890px;
   margin-bottom: 30px;
 }
 
@@ -876,14 +937,263 @@ header .search_header .btn_search {
 /**********************体育比赛************************************/
 /**********************儿童亲子************************************/
 /**********************尾部************************************/
-/* line 69, ../sass/index.scss */
-#bottom {
-  background: cyan;
-  height: 360px;
+/* line 5, ../sass/_footer.scss */
+.footer_links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 0;
+  text-align: center;
+  zoom: 1;
 }
 
-/* line 75, ../sass/index.scss */
-footer {
-  background: pink;
-  height: 360px;
+/* line 13, ../sass/_footer.scss */
+.footer_links_list {
+  font-size: 12px;
+  color: #111;
+}
+/* line 16, ../sass/_footer.scss */
+.footer_links_list a {
+  font-size: 12px;
+  color: #111;
+}
+/* line 19, ../sass/_footer.scss */
+.footer_links_list a:hover {
+  color: #ff1268;
+  text-decoration: underline;
+}
+
+/* line 25, ../sass/_footer.scss */
+.footer_links_grep {
+  padding: 0 24px;
+  font-size: 12px;
+  color: #111;
+}
+
+/* line 30, ../sass/_footer.scss */
+.footer_ft {
+  padding-bottom: 58px;
+  zoom: 1;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* line 36, ../sass/_footer.scss */
+.footer_fl {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+/* line 40, ../sass/_footer.scss */
+.footer_fl a {
+  zoom: 1;
+  float: left;
+  margin-top: 20px;
+  width: 167px;
+  height: 60px;
+}
+/* line 46, ../sass/_footer.scss */
+.footer_fl a img {
+  width: 100%;
+  display: block;
+}
+/* line 51, ../sass/_footer.scss */
+.footer_fl .footer_code_box {
+  width: 87px;
+  text-align: center;
+  margin-left: 40px;
+  font-size: 14px;
+  color: #111111;
+}
+/* line 57, ../sass/_footer.scss */
+.footer_fl .footer_code_box img {
+  display: block;
+  width: 87px;
+  height: 87px;
+  margin-bottom: 8px;
+}
+
+/* line 66, ../sass/_footer.scss */
+.footer_fr .footer_fr_contact {
+  zoom: 1;
+  padding-bottom: 10px;
+}
+/* line 69, ../sass/_footer.scss */
+.footer_fr .footer_fr_contact a {
+  display: block;
+  width: 98px;
+  height: 27px;
+  line-height: 27px;
+  text-align: center;
+  background-color: #ff1268;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 20px;
+}
+/* line 81, ../sass/_footer.scss */
+.footer_fr .footer_fr_words {
+  padding-bottom: 6px;
+  zoom: 1;
+  display: flex;
+}
+/* line 85, ../sass/_footer.scss */
+.footer_fr .footer_fr_words .footer_links_grep {
+  padding: 0 15px;
+}
+/* line 89, ../sass/_footer.scss */
+.footer_fr .footer_fr_words a:hover {
+  text-decoration: none;
+}
+/* line 92, ../sass/_footer.scss */
+.footer_fr .footer_fr_img {
+  display: flex;
+  align-items: center;
+  padding-top: 15px;
+}
+/* line 96, ../sass/_footer.scss */
+.footer_fr .footer_fr_img a {
+  margin-right: 5px;
+}
+/* line 98, ../sass/_footer.scss */
+.footer_fr .footer_fr_img a img {
+  display: block;
+  height: 30px;
+}
+/* line 103, ../sass/_footer.scss */
+.footer_fr .footer_fr_img a:nth-of-type(3) img {
+  width: 114px;
+  height: 40px;
+}
+
+/**********************sideBar************************************/
+/* line 3, ../sass/_sideBar.scss */
+#sideBar {
+  background: #fff;
+  border: 1px solid #EBEBEB;
+  width: 80px;
+  position: fixed;
+  right: 10px;
+  top: 72.5%;
+  margin-top: -105px;
+  z-index: 9999;
+}
+
+/* line 13, ../sass/_sideBar.scss */
+.item {
+  height: 60px;
+  border-bottom: 1px solid #EBEBEB;
+  text-align: center;
+  padding-top: 10px;
+  color: #111;
+  font-size: 12px;
+  position: relative;
+  cursor: pointer;
+  box-sizing: content-box;
+}
+/* line 23, ../sass/_sideBar.scss */
+.item p {
+  margin-top: 5px;
+}
+/* line 26, ../sass/_sideBar.scss */
+.item:hover p {
+  color: #ff1268;
+}
+/* line 27, ../sass/_sideBar.scss */
+.item a {
+  display: block;
+  text-decoration: none;
+  color: #111;
+}
+/* line 32, ../sass/_sideBar.scss */
+.item .icon {
+  background: url(../images/right.png) no-repeat 3px -30px;
+  margin: 0 auto;
+  width: 32px;
+  height: 29px;
+  background-size: 100%;
+}
+/* line 39, ../sass/_sideBar.scss */
+.item .daMai {
+  background-position: 0 4px;
+}
+/* line 42, ../sass/_sideBar.scss */
+.item .goTop {
+  background-position: 4px -65px;
+}
+/* line 45, ../sass/_sideBar.scss */
+.item .qrCode {
+  background: url(../images/qr-code.jpg) no-repeat center;
+  background-size: 90%;
+  display: none;
+  position: absolute;
+  width: 72px;
+  height: 72px;
+  left: -92px;
+  top: -6px;
+  box-shadow: 2px 2px 4px #ccc;
+  padding: 5px;
+}
+/* line 56, ../sass/_sideBar.scss */
+.item .qrCode::after {
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  margin-top: -2.5px;
+  right: -5px;
+  width: 0;
+  height: 0;
+  content: '';
+  border-style: solid;
+  border-width: 5px;
+  border-color: #fff #fff transparent transparent;
+  transform: rotate(45deg);
+  box-shadow: 1px -1px 1px #ccc;
+}
+
+/* line 73, ../sass/_sideBar.scss */
+.item:nth-of-type(2):hover .qrCode {
+  display: block;
+}
+
+/* line 76, ../sass/_sideBar.scss */
+.go_top {
+  border-bottom-width: 0;
+  display: none;
+}
+
+/**********************楼梯************************************/
+/* line 1, ../sass/_stairs.scss */
+#stairs {
+  background: #fff;
+  border: 1px solid #EBEBEB;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 50px;
+  position: fixed;
+  left: 10px;
+  top: 300px;
+  color: #111;
+  margin-top: -105px;
+  z-index: 9999;
+}
+/* line 13, ../sass/_stairs.scss */
+#stairs .stairs_item {
+  height: 60px;
+  border-bottom: 1px solid #EBEBEB;
+  text-align: center;
+  padding: 5px;
+  font-size: 16px;
+  position: relative;
+  cursor: pointer;
+  box-sizing: content-box;
+}
+/* line 22, ../sass/_stairs.scss */
+#stairs .stairs_item p {
+  margin-top: 10px;
+  line-height: 20px;
+}
+
+/* line 28, ../sass/_stairs.scss */
+.stairs_item:last-of-type {
+  border-bottom: 0;
 }

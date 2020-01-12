@@ -17,6 +17,11 @@ $colors:(a:#abc,b:#affeee,c:#ddffaa,d:#fedfed,e:red,f:blue,g:green,h:orange,i:cy
 .black {
     color: #000;
 }
+.active {
+    background: #ff1268;
+    color: #fff;
+    font-weight: 600;
+}
 a {
     text-decoration: none;
 }
@@ -40,8 +45,6 @@ body {
 /**********************主要内容************************************/
 #content_wrap {
     @extend %center;
-    // background: map-get($colors, d);
-    height: 1890px;
     // position: relative;
     margin-bottom: 30px;
 }
@@ -68,12 +71,9 @@ body {
 /**********************尾部************************************/
 #bottom {
     @extend %wrap;
-    background: map-get($colors, i);
-    height: 360px;
 }
-// @import './footer';
-footer {
-    @extend %center;
-    background: map-get($colors, j);
-    height: 360px;
-}
+@import './footer';
+/**********************sideBar************************************/
+@import './sideBar';
+/**********************楼梯************************************/
+@import './stairs';
