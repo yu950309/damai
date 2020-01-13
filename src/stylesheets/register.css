@@ -1,0 +1,214 @@
+/* line 3, ../sass/register.scss */
+.pcbar {
+  width: 100%;
+  height: 90px;
+  background: #fff;
+}
+
+/* line 8, ../sass/register.scss */
+.pcbar__bd {
+  width: 1200px;
+  margin: 0 auto;
+  height: 90px;
+}
+
+/* line 13, ../sass/register.scss */
+.pcbar__bd__logo {
+  float: left;
+  margin-top: 24px;
+}
+
+/* line 17, ../sass/register.scss */
+.pcbar__bd__logo img {
+  display: block;
+  width: 108px;
+  height: 48px;
+}
+
+/* line 22, ../sass/register.scss */
+.pcbar__bd__btn {
+  float: right;
+  margin-top: 24px;
+  width: 121px;
+  height: 38px;
+  line-height: 38px;
+  overflow: hidden;
+  text-align: center;
+  border: 1px solid #ebebeb;
+  font-size: 14px;
+  color: #888;
+  text-decoration: none;
+}
+
+/* line 35, ../sass/register.scss */
+.pcbar__bd__btn:hover {
+  text-decoration: none;
+  background: #ff1268;
+  color: #fff;
+}
+
+/* line 40, ../sass/register.scss */
+body {
+  background: #f6f4f5;
+}
+
+/* line 44, ../sass/register.scss */
+.content {
+  margin-top: 20px;
+}
+
+/* line 48, ../sass/register.scss */
+.w1000 {
+  width: 1200px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+/* line 54, ../sass/register.scss */
+.registerForm {
+  padding: 60px 50px 170px;
+}
+/* line 57, ../sass/register.scss */
+.registerForm .registerTitle {
+  height: 24px;
+  line-height: 24px;
+  font-family: 'Microsoft YaHei';
+}
+/* line 62, ../sass/register.scss */
+.registerForm .registerTitle b {
+  border-left: 3px solid #ff0000;
+  font-size: 22px;
+  color: #333;
+  font-weight: bold;
+  padding-left: 13px;
+  line-height: 24px;
+  font-family: 'Microsoft YaHei';
+  display: inline-block;
+}
+/* line 73, ../sass/register.scss */
+.registerForm .registerTitle .backLogin {
+  float: right;
+  font-size: 14px;
+  color: #c1c1c1;
+}
+/* line 78, ../sass/register.scss */
+.registerForm .registerTitle .backLogin a {
+  color: #999;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 5px;
+}
+/* line 83, ../sass/register.scss */
+.registerForm .registerTitle .backLogin a:hover {
+  color: #ff1268;
+}
+/* line 88, ../sass/register.scss */
+.registerForm .registerInputWrap {
+  margin-top: 50px;
+  position: relative;
+}
+/* line 92, ../sass/register.scss */
+.registerForm .registerInputWrap .subButton {
+  width: 380px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border: none;
+  background: #ff1268;
+  color: #fff;
+  border-radius: 5px;
+  margin-left: 180px;
+  margin-top: 23px;
+}
+
+/* line 107, ../sass/register.scss */
+.item {
+  border-bottom: 0 !important;
+}
+/* line 109, ../sass/register.scss */
+.item .contentInput {
+  overflow: hidden;
+  line-height: 42px;
+}
+/* line 113, ../sass/register.scss */
+.item .contentInput .label {
+  width: 150px;
+  text-align: right;
+  float: left;
+  font-size: 16px;
+  color: #333;
+}
+/* line 122, ../sass/register.scss */
+.item .contentInput .inputWrap {
+  box-sizing: border-box;
+  width: 340px;
+  height: 42px;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  float: left;
+  margin-left: 30px;
+}
+/* line 131, ../sass/register.scss */
+.item .contentInput .inputWrap .danger {
+  border-color: #e60000;
+}
+/* line 135, ../sass/register.scss */
+.item .contentInput .inputWrap input {
+  border: none;
+  outline: none;
+  height: 100%;
+  width: 100%;
+  padding-left: 10px;
+  background: transparent;
+}
+/* line 144, ../sass/register.scss */
+.item .contentInput .inputWrap input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+/* line 150, ../sass/register.scss */
+.item .contentInput .info {
+  margin-left: 20px;
+  height: 30px;
+  display: none;
+}
+/* line 157, ../sass/register.scss */
+.item .tip {
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+}
+/* line 162, ../sass/register.scss */
+.item .tip p {
+  display: none;
+  margin-left: 180px;
+  color: #666;
+}
+/* line 167, ../sass/register.scss */
+.item .tip .danger {
+  color: #e60000;
+}
+
+/* line 175, ../sass/register.scss */
+#confirmCode .inputWrap {
+  width: 200px;
+}
+/* line 179, ../sass/register.scss */
+#confirmCode .codeWrap {
+  float: left;
+  margin-left: 30px;
+}
+
+/* line 185, ../sass/register.scss */
+.otherLoginWrap .therLoginTit {
+  background: url(../Images/logindot.jpg) repeat-x center;
+  margin-left: 180px;
+  text-align: center;
+  width: 380px;
+  margin-top: 46px;
+}
+
+/* line 193, ../sass/register.scss */
+#white {
+  height: 30px;
+  background: #fff;
+}

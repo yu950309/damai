@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>大麦PC注册</title>
+    <link rel="icon" href="./images/logo.ico" sizes="32x32" />
+    <link rel="stylesheet" href="./stylesheets/register.css">
+    <link rel="stylesheet" href="./stylesheets/index.css">
+</head>
+
+<body>
+    <div class="pcbar">
+        <div class="pcbar__bd w1200">
+            <a href="https://www.damai.cn" class="pcbar__bd__logo">
+                <img src="./images/top_logo.png" />
+            </a>
+            <a href="https://en.damai.cn/" target="_blank" class="pcbar__bd__btn">English</a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="w1000">
+            <div class="registerForm">
+                <div class="registerTitle">
+                    <b>新用户注册</b>
+                    <div class="backLogin">
+                        已有账号? <a href="./login.html">请登录</a>
+                    </div>
+                </div>
+                <div class="registerInputWrap">
+
+                    <!-- form表单 -->
+                    <form action="http://10.31.152.26:8080/bookStore/php/regitser.php" method="POST">
+                        <div class="item">
+                            <div class="contentInput">
+                                <span class="label">手机号码:</span>
+                                <div class="inputWrap">
+                                    <input type="text" name="phoneNum" placeholder="请输入您的常用手机号码" maxlength="11"
+                                        autocomplete="off" class="phoneNum">
+                                </div>
+                                <span class="info">
+                                    <img src="./images/sucessTip.png" alt="">
+                                </span>
+                            </div>
+                            <div class="tip">
+                                <p>请输入您的常用手机号码</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="contentInput">
+                                <span class="label">设置密码:</span>
+                                <div class="inputWrap">
+                                    <input type="password" name="pwd" placeholder="请输入密码" class="pwd">
+                                </div>
+                                <span class="info">
+                                    <img src="./images/sucessTip.png" alt="">
+                                </span>
+                            </div>
+                            <div class="tip">
+                                <p>请输入密码</p>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="contentInput">
+                                <span class="label">确认密码:</span>
+                                <div class="inputWrap">
+                                    <input type="password" name="pwdConfirm" placeholder="请再次输入密码" class="pwdConfirm">
+                                </div>
+                                <span class="info">
+                                    <img src="./images/sucessTip.png" alt="">
+                                </span>
+                            </div>
+                            <div class="tip">
+                                <p>请输入密码</p>
+                            </div>
+                        </div>
+
+
+                        <div class="item" id="confirmCode">
+                            <div class="contentInput">
+                                <span class="label">验证码:</span>
+                                <div class="inputWrap">
+                                    <input type="text" class="confirmCode" placeholder="请输入右图验证码">
+                                </div>
+                                <div class="codeWrap">
+                                    <div id="v_container" style="width: 200px;height: 42px;"></div>
+                                </div>
+                                <span class="info">
+                                    <img src="./images/sucessTip.png" alt="">
+                                </span>
+                            </div>
+                            <div class="tip">
+                                <p>请输入图片验证码</p>
+                            </div>
+                        </div>
+                        <input value="立即注册" type="submit" name="submit" class="subButton">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="white"></div>
+    <div id="bottom"></div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        // $(".head").load("../static/header.html");
+        $("#bottom").load("./footer.html");
+    </script>
+    <script src="./script/picCode.js"></script>
+    <script>
+        var verifyCode = new GVerify("v_container");
+       /*  document.querySelector(".button").onclick = function () {
+              verifyCode = new GVerify("v_container");
+          }
+          document.getElementById("my_button").onclick = function () {
+              var res = verifyCode.validate(document.getElementById("code_input").value);
+              if (res) {
+                  alert("验证正确");
+              } else {
+                  alert("验证码错误");
+              }
+          } */
+    </script>
+    <!-- 
+    <script src="../scripts/require.js" defer async='true' data-main="../scripts/main.js" id="currentPage"  target-page="../scripts/registry.js"></script> -->
+</body>
+
+</html>
