@@ -64,11 +64,13 @@
                 display: -webkit-box;
                 -webkit-box-orient: vertical;
                 -webkit-line-clamp: 2;
+                &:hover {@include hover_color;}
             }
             .details {
                 margin-top: 12px;
                 font-size: 20px;
                 color: #fff;
+                &:hover {@include hover_color;}
                 span {
                     font-size: 14px;
                 }

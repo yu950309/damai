@@ -1,6 +1,6 @@
 function daMai(data) {
     // console.log(data);
-    let list_search = $('.list_search a');
+    let list_search = $('.list_search');
     let list = $('.search_wrap');
     if (data[0]) {
         let str = '';
@@ -61,10 +61,110 @@ class Search {
     }
 }
 
+class Render{
+    constructor (){
+        this.content=$('.box');
+        this.concertBox=$('.content_concert .box_right_item');
+        this.operaBox=$('.content_opera .box_right_item');
+        this.physicalBox=$('.content_physical .box_right_item');
+        this.campaignBox=$('.content_campaign .box_right_item');
+    }
+    init (){
+        $.ajax({
+            url:'http://10.31.152.51/xwy/damai/php/indexData.php',
+            data:{
+                num:1
+            },
+            dataType:'json'
+        }).done((data)=>{
+            $.each(data,($index,$value)=>{
+                if($index===0) {
+                    $('.content_concert .box_left img').attr('src',$value.url);
+                    $('.content_concert .box_left .title').html($value.title);
+                    $('.content_concert .box_left .details').html('¥'+$value.price+'<span>起</span>');
+                }else {
+                    $('.content_concert .box_right_item img').eq($index-1).attr('src',$value.url);
+                    $('.content_concert .box_right_item .title').eq($index-1).html($value.title);
+                    $('.content_concert .box_right_item .venue').eq($index-1).html($value.address);
+                    $('.content_concert .box_right_item .showtime').eq($index-1).html($value.time);
+                    $('.content_concert .box_right_item .price').eq($index-1).html('¥'+$value.price+'<span>起</span>');
+                }
+            });
+        });
+        $.ajax({
+            url:'http://10.31.152.51/xwy/damai/php/indexData.php',
+            data:{
+                num:2
+            },
+            dataType:'json'
+        }).done((data)=>{
+            console.log(data);
+            $.each(data,($index,$value)=>{
+                if($index===0) {
+                    $('.content_opera .box_left img').attr('src',$value.url);
+                    $('.content_opera .box_left .title').html($value.title);
+                    $('.content_opera .box_left .details').html('¥'+$value.price+'<span>起</span>');
+                }else {
+                    $('.content_opera .box_right_item img').eq($index-1).attr('src',$value.url);
+                    $('.content_opera .box_right_item .title').eq($index-1).html($value.title);
+                    $('.content_opera .box_right_item .venue').eq($index-1).html($value.address);
+                    $('.content_opera .box_right_item .showtime').eq($index-1).html($value.time);
+                    $('.content_opera .box_right_item .price').eq($index-1).html('¥'+$value.price+'<span>起</span>');
+                }
+            });
+        });
+        $.ajax({
+            url:'http://10.31.152.51/xwy/damai/php/indexData.php',
+            data:{
+                num:4
+            },
+            dataType:'json'
+        }).done((data)=>{
+            console.log(data);
+            $.each(data,($index,$value)=>{
+                if($index===0) {
+                    $('.content_physical .box_left img').attr('src',$value.url);
+                    $('.content_physical .box_left .title').html($value.title);
+                    $('.content_physical .box_left .details').html('¥'+$value.price+'<span>起</span>');
+                }else {
+                    $('.content_physical .box_right_item img').eq($index-1).attr('src',$value.url);
+                    $('.content_physical .box_right_item .title').eq($index-1).html($value.title);
+                    $('.content_physical .box_right_item .venue').eq($index-1).html($value.address);
+                    $('.content_physical .box_right_item .showtime').eq($index-1).html($value.time);
+                    $('.content_physical .box_right_item .price').eq($index-1).html('¥'+$value.price+'<span>起</span>');
+                }
+            });
+        });
+        $.ajax({
+            url:'http://10.31.152.51/xwy/damai/php/indexData.php',
+            data:{
+                num:3
+            },
+            dataType:'json'
+        }).done((data)=>{
+            console.log(data);
+            $.each(data,($index,$value)=>{
+                if($index===0) {
+                    $('.content_campaign .box_left img').attr('src',$value.url);
+                    $('.content_campaign .box_left .title').html($value.title);
+                    $('.content_campaign .box_left .details').html('¥'+$value.price+'<span>起</span>');
+                }else {
+                    $('.content_campaign .box_right_item img').eq($index-1).attr('src',$value.url);
+                    $('.content_campaign .box_right_item .title').eq($index-1).html($value.title);
+                    $('.content_campaign .box_right_item .venue').eq($index-1).html($value.address);
+                    $('.content_campaign .box_right_item .showtime').eq($index-1).html($value.time);
+                    $('.content_campaign .box_right_item .price').eq($index-1).html('¥'+$value.price+'<span>起</span>');
+                }
+            });
+        });
+    }
+}
+
 define([], function () {
     return {
         init: function () {
             new Search().init();
+            new Render().init();
         }
     }
 })
