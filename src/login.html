@@ -9,6 +9,7 @@
     <link rel="icon" href="./images/logo.ico" sizes="32x32" />
     <link rel="stylesheet" href="./stylesheets/index.css">
     <link rel="stylesheet" href="./stylesheets/register.css">
+    <script src="script/require.js" defer async='true' data-main='script/main.js' id='current' target-page='script/login.js'></script>
 </head>
 
 <body>
@@ -24,9 +25,10 @@
     </div>
     <div class="content">
         <div class="panda">
-            <img src="./images/panda1.png" alt="" class="pandaShow">
             <img src="./images/panda2.png" alt="">
             <img src="./images/panda3.png" alt="">
+            <img src="./images/panda2.png" alt="">
+            <img src="./images/panda1.png" alt="" class="pandaShow">
         </div>
         <a href="#" class="logoImg">
             <img src="./images/longin_bg.png" alt="">
@@ -89,8 +91,6 @@
                                 <p>请输入图片验证码</p>
                             </div>
                         </div>
-
-
                         <input value="登录" type="button" class="subButton">
 
                     </form>
@@ -120,14 +120,14 @@
 
     <div id="bottom"> </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
         $("#bottom").load("./footer.html");
     </script>
     <script src="./script/picCode.js"></script>
     <script>
         var verifyCode = new GVerify("v_container");
-    </script>
+    </script> -->
 </body>
 
 </html>

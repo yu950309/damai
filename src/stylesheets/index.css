@@ -65,13 +65,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 /* line 5, ../sass/index.scss */
-.ad a img, header, #banner, #menu, #content_wrap, footer {
+header, #banner, #menu, #content_wrap, footer {
   width: 1200px;
   margin: 0 auto;
 }
 
 /* line 9, ../sass/index.scss */
-#ad_wrap, .ad, .ad a, #top, #bottom {
+#top, #bottom {
   width: 100%;
 }
 
@@ -93,56 +93,24 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 /* line 24, ../sass/index.scss */
+.show {
+  display: block !important;
+}
+
+/* line 27, ../sass/index.scss */
 .border {
   border: 1px solid #ff1268;
 }
 
-/* line 27, ../sass/index.scss */
+/* line 30, ../sass/index.scss */
 a {
   text-decoration: none;
 }
 
-/**********************广告************************************/
-/* line 1, ../sass/_ad.scss */
-#ad_wrap {
-  height: 60px;
-}
-
-/* line 5, ../sass/_ad.scss */
-.ad {
-  height: 100%;
-  text-align: center;
-  min-width: 1200px;
-  overflow: hidden;
-  position: relative;
-  background: #fcfcfc;
-}
-/* line 13, ../sass/_ad.scss */
-.ad a {
-  height: 100%;
-  min-width: 1200px;
-}
-/* line 17, ../sass/_ad.scss */
-.ad a img {
-  display: block;
-}
-
-/* line 23, ../sass/_ad.scss */
-.close {
-  width: 23px;
-  height: 23px;
-  background: url("../images/close.png");
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  margin-top: -11.5px;
-  cursor: pointer;
-  background-size: 100%;
-}
-
-/* line 36, ../sass/index.scss */
+/* line 37, ../sass/index.scss */
 #top {
   height: 72px;
+  background: #fff;
   box-shadow: 0 2px 16px 0 rgba(220, 220, 220, 0.5);
 }
 
@@ -609,43 +577,46 @@ header .search_wrap .list_search .city_search {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  display: block;
-}
-/* line 37, ../sass/_banner.scss */
-.banner_wrap .prev {
+  display: none;
+  position: absolute;
+  top: 0;
   left: 0;
 }
 /* line 40, ../sass/_banner.scss */
+.banner_wrap .prev {
+  left: 0;
+}
+/* line 43, ../sass/_banner.scss */
 .banner_wrap .prev:hover {
   background: #ff1268;
   opacity: 0.32;
 }
-/* line 41, ../sass/_banner.scss */
+/* line 44, ../sass/_banner.scss */
 .banner_wrap .prev .left {
   left: 24px;
   transform: translate(0, -50%) rotate(-135deg);
 }
-/* line 47, ../sass/_banner.scss */
+/* line 50, ../sass/_banner.scss */
 .banner_wrap .next {
   right: 0;
 }
-/* line 50, ../sass/_banner.scss */
+/* line 53, ../sass/_banner.scss */
 .banner_wrap .next:hover {
   background: #ff1268;
   opacity: 0.32;
 }
-/* line 51, ../sass/_banner.scss */
+/* line 54, ../sass/_banner.scss */
 .banner_wrap .next .right {
   transform: translate(0, -50%) rotate(45deg);
 }
-/* line 56, ../sass/_banner.scss */
+/* line 59, ../sass/_banner.scss */
 .banner_wrap .nav {
   position: absolute;
   bottom: 23px;
   right: 32px;
   z-index: 99;
 }
-/* line 61, ../sass/_banner.scss */
+/* line 64, ../sass/_banner.scss */
 .banner_wrap .nav .dot {
   width: 10px;
   height: 10px;
@@ -656,7 +627,7 @@ header .search_wrap .list_search .city_search {
   opacity: 0.32;
   cursor: pointer;
 }
-/* line 71, ../sass/_banner.scss */
+/* line 74, ../sass/_banner.scss */
 .banner_wrap .nav .current {
   opacity: 1;
 }
@@ -735,7 +706,7 @@ header .search_wrap .list_search .city_search {
 }
 
 /**********************主要内容************************************/
-/* line 49, ../sass/index.scss */
+/* line 50, ../sass/index.scss */
 #content_wrap {
   margin-bottom: 30px;
 }
@@ -1183,8 +1154,9 @@ header .search_wrap .list_search .city_search {
   color: #111;
   margin-top: -105px;
   z-index: 9999;
+  display: none;
 }
-/* line 13, ../sass/_stairs.scss */
+/* line 14, ../sass/_stairs.scss */
 #stairs .stairs_item {
   height: 60px;
   border-bottom: 1px solid #EBEBEB;
@@ -1195,13 +1167,13 @@ header .search_wrap .list_search .city_search {
   cursor: pointer;
   box-sizing: content-box;
 }
-/* line 22, ../sass/_stairs.scss */
+/* line 23, ../sass/_stairs.scss */
 #stairs .stairs_item p {
   margin-top: 10px;
   line-height: 20px;
 }
 
-/* line 28, ../sass/_stairs.scss */
+/* line 29, ../sass/_stairs.scss */
 .stairs_item:last-of-type {
   border-bottom: 0;
 }

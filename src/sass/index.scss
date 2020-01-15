@@ -21,6 +21,9 @@ $page_container:100%;
     color: #fff;
     font-weight: 600;
 }
+.show {
+    display: block !important;
+}
 .border{
     border: 1px solid #ff1268;
 }
@@ -31,12 +34,10 @@ a {
 // body {
 //     background: rgb(252,252,252);
 // }
-/**********************广告************************************/
-@import './ad';
 #top {
     @extend %wrap;
     height: 72px;
-    // background: #fff;
+    background: #fff;
     box-shadow: 0 2px 16px 0 rgba(220,220,220,.5);
 }
 /**********************头部************************************/
