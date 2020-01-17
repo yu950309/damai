@@ -10,33 +10,40 @@ const sass = require('gulp-sass'); //引入sass编译包。
 const sourcemaps = require('gulp-sourcemaps'); //引入生成.map文件模块
 const plugins = require('gulp-load-plugins')(); //生成.map文件
 const watch=require('gulp-watch');
+const requirejsOptimize = require('gulp-requirejs-optimize');
+
 gulp.task('runhtml', function () {
     return gulp.src('src/*.html')
         .pipe(html()) //调用模块或者包
         .pipe(gulp.dest('dist/'));
 });
-gulp.task('compilesass', function () {
-    return gulp.src('src/sass/*.scss')
-        .pipe(plugins.sourcemaps.init()) // 初始化 gulp-sourcemaps 插件  生成.map文件初始化  
-        .pipe(plugins.sass({ // 调用 sass 插件，编译 sass 文件
-            outputStyle: 'compressed' //压缩一行
-        }))
-        .pipe(plugins.sourcemaps.write('.')) // 生成 sourcemap 生成.map文件 
-        .pipe(gulp.dest('dist/css/')); // 目标文件存放路径
-});
+// gulp.task('compilesass', function () {
+//     return gulp.src('src/sass/*.scss')
+//         .pipe(plugins.sourcemaps.init()) // 初始化 gulp-sourcemaps 插件  生成.map文件初始化  
+//         .pipe(plugins.sass({ // 调用 sass 插件，编译 sass 文件
+//             outputStyle: 'compressed' //压缩一行
+//         }))
+//         .pipe(plugins.sourcemaps.write('.')) // 生成 sourcemap 生成.map文件 
+//         .pipe(gulp.dest('dist/css/')); // 目标文件存放路径
+// });
  gulp.task('runcss', function () {
      return gulp.src('src/stylesheets/*.css')
          .pipe(css()) //调用模块或者包
          .pipe(gulp.dest('dist/stylesheets/'));
  });
-gulp.task('uglifyjs', function () {
-        return gulp.src('src/script/*.js')
-            .pipe(babel({ //es6转es5
-                presets: ['es2015']
-            }))
-            .pipe(uglifyjs()) //调用模块或者包
-            .pipe(gulp.dest('dist/script/'));
-    });
+// gulp.task('uglifyjs', function () {
+//     return gulp.src('src/script/*.js')
+//         .pipe(babel({ //es6转es5
+//             presets: ['es2015']
+//         }))
+//         .pipe(uglifyjs()) //调用模块或者包
+//         .pipe(gulp.dest('dist/script/'));
+// });
+gulp.task('rjs', function () {
+    return gulp.src('src/script/js/main.js')
+        .pipe(requirejsOptimize())
+        .pipe(gulp.dest('dist/script/js/'));
+});
     
 //6.图片压缩
 //图片压缩的插件：gulp-imagemin

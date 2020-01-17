@@ -180,7 +180,7 @@ body {
 .item1 .contentInput .inputWrap {
   box-sizing: border-box;
   width: 340px;
-  height: 42px;
+  height: 36px;
   border: 1px solid #dcdcdc;
   border-radius: 4px;
   float: left;
@@ -211,14 +211,14 @@ body {
 }
 /* line 193, ../sass/register.scss */
 .item1 .tip {
-  height: 30px;
+  height: 32px;
   line-height: 30px;
   font-size: 12px;
 }
 /* line 198, ../sass/register.scss */
 .item1 .tip p {
   display: none;
-  margin-left: 180px;
+  margin-left: 135px;
   color: #666;
 }
 /* line 203, ../sass/register.scss */

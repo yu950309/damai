@@ -4,15 +4,29 @@ class Login {
     constructor (){
         this.inputs=$('.contentInput input');
         this.imgs=$('.panda img');
+        this.notice=$('.tip p');
+        this.inNum=null;
     }
     init (){
         let _this=this;
+        console.log($('.inputWrap input[name=phoneNum]'));
         this.inputs.on('focus',function(){
-            console.log($(this).index())
-            _this.inputs.parents('.inputWrap').css('borderColor','#dcdcdc');
-            $(this).parents('.inputWrap').css('borderColor','#ff1268');
-            _this.imgs.eq($(this).index()).addClass('pandaShow').siblings('img').removeClass('pandaShow');
+            _this.idNUM=$(this).attr('i');
+            _this.inputFocus();
         });
+        this.inputs.on('blur',function(){
+            _this.idNUM=$(this).attr('i');
+            _this.inputBlur();
+        });
+    }
+    inputFocus (){
+        this.inputs.eq(this.idNUM).parents('.inputWrap').css('borderColor','#ff1268');
+        this.imgs.eq(this.idNUM).addClass('pandaShow').siblings('img').removeClass('pandaShow');
+        this.notice.eq(this.idNUM).show();
+    }
+    inputBlur (){
+        this.inputs.eq(this.idNUM).parents('.inputWrap').css('borderColor','#dcdcdc');
+        this.imgs.eq(3).addClass('pandaShow').siblings('img').removeClass('pandaShow');
     }
 }
 

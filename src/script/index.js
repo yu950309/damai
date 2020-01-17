@@ -216,7 +216,7 @@ class Stair {
         this.floor = $('.dm-content');
         this.sideBar = $('#sideBar');
         this.goTop = $('.go_top');
-        this.header=$('#top');
+        this.header = $('#top');
         this.index = null;
     }
     init() {
@@ -250,10 +250,10 @@ class Stair {
                 this.sideBar.css('top', '72.5%');
                 this.goTop.hide();
             }
-            if($(window).scrollTop()>this.header.outerHeight()) {
-                this.header.css({'position':'fixed','top':0,'left':0,'zIndex':999});
-            }else {
-                this.header.css('position','static');
+            if ($(window).scrollTop() > this.header.outerHeight()) {
+                this.header.css({ 'position': 'fixed', 'top': 0, 'left': 0, 'zIndex': 999 });
+            } else {
+                this.header.css('position', 'static');
             }
             let $move_top = $(window).scrollTop();
             this.floor.each(function (index) {
@@ -276,6 +276,12 @@ class Stair {
     }
 }
 
+// export {
+//     Search,
+//     Render,
+//     Banner,
+//     Stair
+// }
 define([], function () {
     return {
         init: function () {

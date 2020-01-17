@@ -16,3 +16,25 @@ require(['jquery'],function(){
         })
     }
 })
+
+// require(['index','registry','login'],function(i,r,l){
+//     $('#top').load('./header.html');
+//     $('#bottom').load('./footer.html');
+//     i.init();
+//     r.init();
+//     l.init();
+// })
+
+// import {
+//     Search,
+//     Render,
+//     Banner,
+//     Stair
+// } from './index.js';
+
+// (function(){
+//     new Search().init();
+//     new Render().init();
+//     new Banner().init();
+//     new Stair().init();
+// })();

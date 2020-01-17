@@ -158,7 +158,7 @@ body {
         .inputWrap {
             box-sizing: border-box;
             width: 340px;
-            height: 42px;
+            height: 36px;
             border: 1px solid #dcdcdc;
             border-radius: 4px;
             float: left;
@@ -191,13 +191,13 @@ body {
     }
 
     .tip {
-        height: 30px;
+        height: 32px;
         line-height: 30px;
         font-size: 12px;
 
         p {
             display: none;
-            margin-left: 180px;
+            margin-left: 135px;
             color: #666;
         }
         .danger{
