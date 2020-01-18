@@ -1,23 +1,4 @@
-function daMai(data) {
-    // console.log(data);
-    let list_search = $('.list_search');
-    let list = $('.search_wrap');
-    if (data[0]) {
-        let str = '';
-        $.each(data, function (index, value) {
-            str += `
-        <a href="https://detail.damai.cn/item.htm?spm=a2oeg.home.searchtxt.ditem_0.591b23e1KRioyI&id=${value.id}" target="_blank">
-        <span class="title_search">${value.name}</span>
-        <span class="city_search">${value.cityName}</span>
-    </a>
-        `;
-        });
-        list_search.html(str);
-    } else {
-        str = '';
-    }
 
-}
 class Search {
     constructor() {
         this.search = $('.search_header input');
@@ -27,9 +8,24 @@ class Search {
         $('#top').load('./header.html', () => {
             this.search = $('.search_header input');
             this.list = $('.search_wrap');
+            this.login_user=$('.login_user span');
+            this.out_login=$('.out_login');
+            this.login();
             this.getData();
         });
         $('#bottom').load('./footer.html');
+    }
+    login() {
+        if (window.location.search.slice(1)) {
+            this.login_user.html(window.location.search.slice(1)).addClass('danger');
+            this.out_login[0].style.display='block';
+        }else {
+            this.login_user.html('登录').removeClass('danger');
+            this.out_login.hide();
+        }
+        this.out_login.on('click',function(){
+            window.location.href='http://10.31.152.51/xwy/project/damai/dist';
+        });
     }
     getData() {
         let _this = this;
@@ -44,16 +40,27 @@ class Search {
         this.search.on('input', function () {
             if ($(this).val() !== '') {
                 _this.list.show();
-                let cScript = document.createElement('script');
-                $(cScript).attr('src', 'https://api-gw.damai.cn/suggest.html?keyword=' + $(this).val() + '&destCity=%E5%85%A8%E5%9B%BD&_ksTS=1578823685440_193&callback=daMai');
-                cScript.className = 'cs';
-                // $(cScript).addClass('cs');
-                let arr = document.querySelectorAll('.cs');
-                document.body.appendChild(cScript);
-                // $('body').append($(cScript));
-                for (let i = 0; i < arr.length; i++) {
-                    document.body.removeChild(arr[i]);
-                }
+                $.ajax({
+                    url: 'https://api-gw.damai.cn/suggest.html?keyword=' + $(this).val() + '&destCity=%E5%85%A8%E5%9B%BD&_ksTS=1578823685440_193',
+                    dataType: 'jsonp'
+                }).done((data) => {
+                    let list_search = $('.list_search');
+                    let list = $('.search_wrap');
+                    let str = '';
+                    if (data[0]) {
+                        $.each(data, function (index, value) {
+                            str += `
+                                <a href="https://detail.damai.cn/item.htm?spm=a2oeg.home.searchtxt.ditem_0.591b23e1KRioyI&id=${value.id}" target="_blank">
+                                <span class="title_search">${value.name}</span>
+                                <span class="city_search">${value.cityName}</span>
+                                </a>
+                            `;
+                        });
+                    } else {
+                        str = '';
+                    }
+                    list_search.html(str);
+                })
             } else {
                 _this.list.hide();
             }
@@ -276,19 +283,19 @@ class Stair {
     }
 }
 
-// export {
-//     Search,
-//     Render,
-//     Banner,
-//     Stair
-// }
-define([], function () {
-    return {
-        init: function () {
-            new Search().init();
-            new Render().init();
-            new Banner().init();
-            new Stair().init();
-        }
-    }
-})
+export {
+    Search,
+    Render,
+    Banner,
+    Stair
+}
+// define([], function () {
+//     return {
+//         init: function () {
+//             new Search().init();
+//             new Render().init();
+//             new Banner().init();
+//             new Stair().init();
+//         }
+//     }
+// })

@@ -93,21 +93,26 @@ header, #banner, #menu, #content_wrap, footer {
 }
 
 /* line 24, ../sass/index.scss */
+.danger {
+  color: #e60000 !important;
+}
+
+/* line 27, ../sass/index.scss */
 .show {
   display: block !important;
 }
 
-/* line 27, ../sass/index.scss */
+/* line 30, ../sass/index.scss */
 .border {
   border: 1px solid #ff1268;
 }
 
-/* line 30, ../sass/index.scss */
+/* line 33, ../sass/index.scss */
 a {
   text-decoration: none;
 }
 
-/* line 37, ../sass/index.scss */
+/* line 40, ../sass/index.scss */
 #top {
   height: 72px;
   background: #fff;
@@ -706,7 +711,7 @@ header .search_wrap .list_search .city_search {
 }
 
 /**********************主要内容************************************/
-/* line 50, ../sass/index.scss */
+/* line 53, ../sass/index.scss */
 #content_wrap {
   margin-bottom: 30px;
 }

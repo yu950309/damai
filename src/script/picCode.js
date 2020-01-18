@@ -134,11 +134,15 @@ function randomColor(min, max) {
     var b = randomNum(min, max);
     return "rgb(" + r + "," + g + "," + b + ")";
 }
-define([], function() {
-    return {
-        init:function(){
-            var verifyCode = new GVerify("v_container");
-            return verifyCode;
-        }
-    }
-});
+// define([], function() {
+//     return {
+//         init:function(){
+//             var verifyCode = new GVerify("v_container");
+//             return verifyCode;
+//         }
+//     }
+// });
+
+export {
+    GVerify
+}

@@ -7,13 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>大麦PC注册</title>
     <link rel="icon" href="./images/logo.ico" sizes="32x32" />
-    <link rel="stylesheet" href="./stylesheets/register.css">
-    <link rel="stylesheet" href="./stylesheets/index.css">
+    <!-- <link rel="stylesheet" href="./stylesheets/register.css"> -->
+    <!-- <link rel="stylesheet" href="./stylesheets/index.css"> -->
     <!-- <script src="script/require.js" defer async='true' data-main='script/main.js'></script> -->
-    <script src="script/require.js" defer async='true' data-main='script/main.js' id='current' target-page='script/registry.js'></script>
+    <!-- <script src="script/require.js" defer async='true' data-main='script/main.js' id='current' target-page='script/registry.js'></script> -->
 </head>
 
-<body>
+<body targetPage='registry' id="body_bg">
     <div class="pcbar">
         <div class="pcbar__bd w1200">
             <a href="https://www.damai.cn" class="pcbar__bd__logo">
@@ -37,13 +37,13 @@
                 <div class="registerInputWrap">
 
                     <!-- form表单 -->
-                    <form action="http://10.31.152.51/xwy/damai/php/registry.php" method="POST">
+                    <form action="http://10.31.152.51/xwy/project/damai/php/registry.php" method="POST">
                         <div class="item1">
                             <div class="contentInput">
                                 <span class="label">手机号码:</span>
                                 <div class="inputWrap">
                                     <input type="text" name="phoneNum" placeholder="请输入您的常用手机号码" maxlength="11"
-                                        autocomplete="off" class="phoneNum">
+                                        autocomplete="off" class="phoneNum" i='0'>
                                 </div>
                                 <span class="info">
                                     <img src="./images/sucessTip.png" alt="">
@@ -57,7 +57,7 @@
                             <div class="contentInput">
                                 <span class="label">设置密码:</span>
                                 <div class="inputWrap">
-                                    <input type="password" name="pwd" placeholder="请输入密码" class="pwd">
+                                    <input type="password" name="pwd" placeholder="请输入密码" class="pwd" i='1'>
                                 </div>
                                 <span class="info">
                                     <img src="./images/sucessTip.png" alt="">
@@ -72,7 +72,7 @@
                             <div class="contentInput">
                                 <span class="label">确认密码:</span>
                                 <div class="inputWrap">
-                                    <input type="password" name="pwdConfirm" placeholder="请再次输入密码" class="pwdConfirm">
+                                    <input type="password" name="pwdConfirm" placeholder="请再次输入密码" class="pwdConfirm" i='2'>
                                 </div>
                                 <span class="info">
                                     <img src="./images/sucessTip.png" alt="">
@@ -88,7 +88,7 @@
                             <div class="contentInput">
                                 <span class="label">验证码:</span>
                                 <div class="inputWrap">
-                                    <input type="text" class="confirmCode" placeholder="请输入右图验证码">
+                                    <input type="text" class="confirmCode" placeholder="请输入右图验证码" i='3'>
                                 </div>
                                 <div class="codeWrap">
                                     <div id="v_container" style="width: 200px;height: 42px;"></div>

@@ -1,40 +1,36 @@
-// require.config({
-//     baseUrl: 'https://cdnjs.cloudflare.com/ajax/libs/', 
-//     paths: {
-//         'jquery': 'jquery/1.12.4/jquery.min',
-//         'jquery_cookie': 'jquery-cookie/1.4.1/jquery.cookie.min',
-//         'jquery_lazy_load': 'jquery.lazyload/1.9.1/jquery.lazyload.min'
-//     }
-// });
-require(['jquery'],function(){
-    $('#top').load('./header.html');
-    $('#bottom').load('./footer.html');
-    let target = $('#current').attr('target-page');
-    if(target) {
-        require([target],function(target){
-            target.init();
-        })
-    }
-})
+import '../stylesheets/index.css';
+import '../stylesheets/login.css';
+import '../stylesheets/registry.css';
 
-// require(['index','registry','login'],function(i,r,l){
-//     $('#top').load('./header.html');
-//     $('#bottom').load('./footer.html');
-//     i.init();
-//     r.init();
-//     l.init();
-// })
+import 'jquery';
 
-// import {
-//     Search,
-//     Render,
-//     Banner,
-//     Stair
-// } from './index.js';
+import {
+    Search,
+    Render,
+    Banner,
+    Stair
+} from './index.js';
+import {
+    Login
+} from './login.js';
+import {
+    Registry
+} from './registry.js';
 
-// (function(){
-//     new Search().init();
-//     new Render().init();
-//     new Banner().init();
-//     new Stair().init();
-// })();
+let page=$('body').attr("targetPage");
+
+
+switch (page) {
+    case 'index':
+        new Search().init();
+        new Render().init();
+        new Banner().init();
+        new Stair().init();
+        break;
+    case 'login':
+        new Login().init();
+        break;
+    case 'registry' :
+        new Registry().init();
+        break;
+}

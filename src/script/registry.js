@@ -1,9 +1,13 @@
+import {
+    GVerify
+} from './picCode.js';
+
 $('#bottom').load('./footer.html');
-let verifyCode_registry = null;
 class Registry {
     constructor() {
         this.inputs = $('.contentInput input');
         this.oForm = $('form');
+        this.verifyCode_registry = new GVerify('v_container');
     }
     init() {
         let _this = this;
@@ -11,9 +15,13 @@ class Registry {
         let passLock = false;
         let reLock = false;
         let yLock = false;
+        let arr=[];
+        $('.tip p').each((index,value)=>{
+            arr.push($(value).html());
+        })
         this.inputs.on('focus', function () {
             $(this).parents('.inputWrap').css('borderColor', '#ff1268');
-            $(this).parents('.item1').find('.tip p').show();
+            $(this).parents('.item1').find('.tip p').show().html(arr[$(this).attr('i')]).removeClass('danger');
         });
         this.inputs.on('blur', function () {
             $(this).parents('.inputWrap').css('borderColor', '#dcdcdc');
@@ -22,11 +30,11 @@ class Registry {
             let notice = $(this).parents('.item1').find('.tip p');
             let ok_span = $(this).parents('.contentInput').find('.info');
             if ($(this).val() !== '') {
-                var reg = /^1[34578]\d{9}$/;
+                var reg = /^1[3456789]\d{9}$/;
                 if (reg.test(this.value)) {
                     $.ajax({
                         type: 'post',
-                        url: 'http://10.31.152.51/xwy/damai/php/select.php',
+                        url: 'http://10.31.152.51/xwy/project/damai/php/select.php',
                         data: {
                             call: $(this).val()
                         }
@@ -136,15 +144,6 @@ class Registry {
                         passLock = true;
                     }
                 }
-                // if ($(this).val() !== $('.pwdConfirm').val() && $('.pwdConfirm').val() !== '') {
-                //     ok_span.hide();
-                //     broNotice.show().addClass('danger').html('密码不一致');
-                //     passLock = false;
-                // } else {
-                //     ok_span.show();
-                //     broNotice.hide().removeClass('danger').html('请再次输入密码');
-                //     passLock = true;
-                // }
             } else {
                 notice.show().addClass('danger');
                 notice.html('密码不能为空');
@@ -172,13 +171,13 @@ class Registry {
                 reLock = false;
             }
         });
+
         $('.confirmCode').on('blur', function () {
             let notice = $(this).parents('.item1').find('.tip p');
             let ok_span = $(this).parents('.contentInput').find('.info');
             if ($(this).val() !== '') {
                 let value = $(this).val();
-                // console.log(verifyCode_registry.validate(value));
-                if (verifyCode_registry.validate(value)) {
+                if (_this.verifyCode_registry.validate(value)) {
                     notice.hide().removeClass('danger').html('请输入图片验证码');
                     ok_span.show();
                     yLock = true;
@@ -195,20 +194,28 @@ class Registry {
         });
         this.oForm.on('submit', function () {
             if (!callLock || !passLock || !reLock || !yLock) {
+                // _this.inputs.not('.subButton').val('');
+                _this.inputs.each((index,value) => {
+                    if ($(value).val() === '') {
+                        $('.tip p').eq(index).show().addClass('danger').html('输入内容不能为空');
+                    }
+                });
                 return false;
-            } else {
-                _this.inputs.not('.subButton').val('');
             }
         })
     }
 }
 
 
-define(['picCode'], function (p) {
-    verifyCode_registry = p.init();
-    return {
-        init: function () {
-            new Registry().init();
-        }
-    }
-})
+// define(['picCode'], function (p) {
+//     verifyCode_registry = p.init();
+//     return {
+//         init: function () {
+//             new Registry().init();
+//         }
+//     }
+// })
+
+export {
+    Registry
+}
