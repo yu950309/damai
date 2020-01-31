@@ -7,6 +7,6 @@ if(isset($_POST['phoneNum']) && isset($_POST['pwd'])) {
 }else {
     echo '非法操作';
 }
-header('location:http://10.31.152.51/xwy/project/damai/dist/login.html')
+header('location:http://192.168.3.9/xwy/project/damai/dist/login.html');
 
 ?>

@@ -24,7 +24,7 @@ class Search {
             this.out_login.hide();
         }
         this.out_login.on('click',function(){
-            window.location.href='http://10.31.152.51/xwy/project/damai/dist';
+            window.location.href='http://192.168.0.106/xwy/project/damai/dist/index.html';
         });
     }
     getData() {
@@ -78,7 +78,7 @@ class Render {
     }
     init() {
         $.ajax({
-            url: 'http://10.31.152.51/xwy/damai/php/indexData.php',
+            url: 'http://192.168.0.106/xwy/project/damai/php/indexData.php',
             data: {
                 num: 1
             },
@@ -86,11 +86,11 @@ class Render {
         }).done((data) => {
             $.each(data, ($index, $value) => {
                 if ($index === 0) {
-                    $('.content_concert .box_left img').attr('src', $value.url);
+                    $('.content_concert .box_left img').attr('src', $value.url).attr('sid', $value.sid);
                     $('.content_concert .box_left .title').html($value.title);
                     $('.content_concert .box_left .details').html('¥' + $value.price + '<span>起</span>');
                 } else {
-                    $('.content_concert .box_right_item img').eq($index - 1).attr('src', $value.url);
+                    $('.content_concert .box_right_item img').eq($index - 1).attr('src', $value.url).attr('sid', $value.sid);
                     $('.content_concert .box_right_item .title').eq($index - 1).html($value.title);
                     $('.content_concert .box_right_item .venue').eq($index - 1).html($value.address);
                     $('.content_concert .box_right_item .showtime').eq($index - 1).html($value.time);
@@ -99,7 +99,7 @@ class Render {
             });
         });
         $.ajax({
-            url: 'http://10.31.152.51/xwy/damai/php/indexData.php',
+            url: 'http://192.168.0.106/xwy/project/damai/php/indexData.php',
             data: {
                 num: 2
             },
@@ -107,11 +107,11 @@ class Render {
         }).done((data) => {
             $.each(data, ($index, $value) => {
                 if ($index === 0) {
-                    $('.content_opera .box_left img').attr('src', $value.url);
+                    $('.content_opera .box_left img').attr('src', $value.url).attr('sid', $value.sid);
                     $('.content_opera .box_left .title').html($value.title);
                     $('.content_opera .box_left .details').html('¥' + $value.price + '<span>起</span>');
                 } else {
-                    $('.content_opera .box_right_item img').eq($index - 1).attr('src', $value.url);
+                    $('.content_opera .box_right_item img').eq($index - 1).attr('src', $value.url).attr('sid', $value.sid);
                     $('.content_opera .box_right_item .title').eq($index - 1).html($value.title);
                     $('.content_opera .box_right_item .venue').eq($index - 1).html($value.address);
                     $('.content_opera .box_right_item .showtime').eq($index - 1).html($value.time);
@@ -120,7 +120,7 @@ class Render {
             });
         });
         $.ajax({
-            url: 'http://10.31.152.51/xwy/damai/php/indexData.php',
+            url: 'http://192.168.0.106/xwy/project/damai/php/indexData.php',
             data: {
                 num: 4
             },
@@ -128,11 +128,11 @@ class Render {
         }).done((data) => {
             $.each(data, ($index, $value) => {
                 if ($index === 0) {
-                    $('.content_physical .box_left img').attr('src', $value.url);
+                    $('.content_physical .box_left img').attr('src', $value.url).attr('sid', $value.sid);
                     $('.content_physical .box_left .title').html($value.title);
                     $('.content_physical .box_left .details').html('¥' + $value.price + '<span>起</span>');
                 } else {
-                    $('.content_physical .box_right_item img').eq($index - 1).attr('src', $value.url);
+                    $('.content_physical .box_right_item img').eq($index - 1).attr('src', $value.url).attr('sid', $value.sid);
                     $('.content_physical .box_right_item .title').eq($index - 1).html($value.title);
                     $('.content_physical .box_right_item .venue').eq($index - 1).html($value.address);
                     $('.content_physical .box_right_item .showtime').eq($index - 1).html($value.time);
@@ -141,7 +141,7 @@ class Render {
             });
         });
         $.ajax({
-            url: 'http://10.31.152.51/xwy/damai/php/indexData.php',
+            url: 'http://192.168.0.106/xwy/project/damai/php/indexData.php',
             data: {
                 num: 3
             },
@@ -149,11 +149,11 @@ class Render {
         }).done((data) => {
             $.each(data, ($index, $value) => {
                 if ($index === 0) {
-                    $('.content_campaign .box_left img').attr('src', $value.url);
+                    $('.content_campaign .box_left img').attr('src', $value.url).attr('sid', $value.sid);
                     $('.content_campaign .box_left .title').html($value.title);
                     $('.content_campaign .box_left .details').html('¥' + $value.price + '<span>起</span>');
                 } else {
-                    $('.content_campaign .box_right_item img').eq($index - 1).attr('src', $value.url);
+                    $('.content_campaign .box_right_item img').eq($index - 1).attr('src', $value.url).attr('sid', $value.sid);
                     $('.content_campaign .box_right_item .title').eq($index - 1).html($value.title);
                     $('.content_campaign .box_right_item .venue').eq($index - 1).html($value.address);
                     $('.content_campaign .box_right_item .showtime').eq($index - 1).html($value.time);
@@ -282,12 +282,24 @@ class Stair {
         })
     }
 }
+class Goods {
+    constructor (){
+        this.goods=$('.title').parents('a');
+    }
+    init (){
+        this.goods.on('click',function(){
+            let $sid=$(this).find('img').attr('sid');
+            $(this).attr('href','http://192.168.0.106/xwy/project/damai/dist/detail.html?sid='+$sid);
+        })
+    }
+}
 
 export {
     Search,
     Render,
     Banner,
-    Stair
+    Stair,
+    Goods
 }
 // define([], function () {
 //     return {

@@ -37,7 +37,7 @@ class Login {
                 if (reg.test(this.value)) {
                     $.ajax({
                         type: 'post',
-                        url: 'http://10.31.152.51/xwy/project/damai/php/select.php',
+                        url: 'http://192.168.0.106/xwy/project/damai/php/select.php',
                         data: {
                             call: $(this).val()
                         }
@@ -108,7 +108,7 @@ class Login {
             if (callLock && passLock) {
                 $.ajax({
                     type: 'post',
-                    url: 'http://10.31.152.51/xwy/project/damai/php/login.php',
+                    url: 'http://192.168.0.106/xwy/project/damai/php/login.php',
                     data: {
                         call: $('.contentInput input[name=phoneNum]').val()
                     },
@@ -116,7 +116,7 @@ class Login {
                 }).done((data) => {
                     if(data[0].password===$('.contentInput input[name=pwd]').val()) {
                         if(yLock) {
-                            window.location.href='http://10.31.152.51/xwy/project/damai/dist?'+$('.contentInput input[name=phoneNum]').val();
+                            window.location.href='http://192.168.0.106/xwy/project/damai/dist/index.html?'+$('.contentInput input[name=phoneNum]').val();
                         }
                     }else {
                         $('.tip p').eq(1).show().html('密码错误').addClass('danger');

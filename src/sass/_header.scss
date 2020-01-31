@@ -197,7 +197,8 @@ header {
                     letter-spacing: .54px;
                     text-align: center;
                     border-bottom: 1px solid #F2F2F2;
-                    &:hover {@include hover_color;}
+                    &:hover {@include hover_color;
+                        background-color: #fff4f8;}
                 }
                 .out_login {
                     display: none;

@@ -34,7 +34,7 @@ class Registry {
                 if (reg.test(this.value)) {
                     $.ajax({
                         type: 'post',
-                        url: 'http://10.31.152.51/xwy/project/damai/php/select.php',
+                        url: 'http://192.168.3.9/xwy/project/damai/php/select.php',
                         data: {
                             call: $(this).val()
                         }

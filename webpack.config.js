@@ -54,10 +54,10 @@ module.exports = {
             },
             chunks: ['']
         }),
-        // new HtmlWebpackPlugin({
-        //     filename: './detail.html',
-        //     template: './src/detail.html',
-        // }),
+        new HtmlWebpackPlugin({
+            filename: './detail.html',
+            template: './src/detail.html',
+        }),
         // new HtmlWebpackPlugin({
         //   filename: './cartlist.html',
         //   template: './src/cartlist.html',
